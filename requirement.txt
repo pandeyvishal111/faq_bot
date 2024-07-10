@@ -1,0 +1,9 @@
+fastapi
+uvicorn 
+requests 
+beautifulsoup4 
+transformers
+jinja2
+sentence-transformers
+sentencepiece
+faiss-cpu

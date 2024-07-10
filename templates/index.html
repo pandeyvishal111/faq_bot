@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FAQ Bot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        width: 60%;
+        padding: 10px;
+        margin-right: 10px;
+      }
+      button {
+        padding: 10px 20px;
+      }
+      .faq {
+        margin-bottom: 20px;
+      }
+      .faq h3 {
+        margin: 0;
+      }
+      .faq p {
+        margin: 5px 0 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>FAQ Bot</h1>
+      <form method="POST">
+        <input type="text" name="question" placeholder="Ask a question" required>
+        <button type="submit">Ask</button>
+      </form>
+      {% if question %}
+        <h2>Question: {{ question }}</h2>
+        <h3>Answer: {{ answer }}</h3>
+      {% endif %}
+      <div class="faqs">
+        {% for faq in faqs %}
+          <div class="faq">
+            <h3>Q: {{ faq.question }}</h3>
+            <p>A: {{ faq.answer }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
